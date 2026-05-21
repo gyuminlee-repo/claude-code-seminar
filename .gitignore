@@ -1,0 +1,32 @@
+# Claude Code runtime
+.claude/
+*.codex-review-passed
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Demo outputs (generated during seminar)
+results/
+notes/agent-reports/
+*.html
+expression_plot.py
+*.png
+*.svg
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Misc
+*.log
+*.tmp
