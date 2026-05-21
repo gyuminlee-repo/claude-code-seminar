@@ -30,3 +30,4 @@ node_modules/
 # Misc
 *.log
 *.tmp
+notes/handoffs/
