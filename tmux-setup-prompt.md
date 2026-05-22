@@ -1,101 +1,107 @@
 ---
 date: 2026-05-18
-updated: 2026-05-18
+updated: 2026-05-22
 type: reference
 project: internal_seminar
 tags:
   - claude-code
   - tmux
-  - 세미나
-  - 실습-프롬프트
+  - seminar
   - hands-on
-references:
-  - $WORKSPACE_ROOT/cc/work/output/260513_seminar_kribb_internal_v2.pptx
-  - $OBSIDIAN_VAULT/010.KRIBB/060.Lab_Seminar/260513_KRIBB_세미나_deck_빌드_결과.md
-  - $OBSIDIAN_VAULT/010.KRIBB/060.Lab_Seminar/260501_CC세미나_완전판_outline.md
-  - $OBSIDIAN_VAULT/020.Wiki_Knowledge/050.Vibe_coding/060.CLI/001.tmux_주요_키.md
-  - $OBSIDIAN_VAULT/998.Claude_code/020.Memory/reference_gml_tmux_kit.md
+  - prompt
 ---
 
-# tmux 셋업 프롬프트 (세미나 실습용)
+# tmux Setup Prompt (Seminar Hands-on)
 
-## 핵심
+## Purpose
 
-KRIBB 내부 세미나 청중이 Claude Code TUI 한 창에서 복붙 한 번으로 tmux Alt-키 환경을 만드는 실습 프롬프트. sudo 일절 금지, Alt+숫자(Claude Code TUI 점유 키) 제외, prefix-less 단축키, OS 분기 자동(macOS/Ubuntu/WSL2). 옵션 A(자립형 long-form) 대신 옵션 B(짧은 일임형) 채택. 슬라이드에 그대로 박을 수 있는 길이.
+A copy-pasteable prompt for seminar attendees to set up a tmux Alt-key environment in one shot from inside the Claude Code TUI. No sudo required. Alt+digit reserved for Claude Code TUI. Prefix-less shortcuts. OS detection auto-branches between macOS / Ubuntu / WSL2. Short enough to fit on a single slide.
 
-## 슬라이드 안내 한 줄
+## One-line slide tagline
 
-`sudo 없음 · Alt+숫자 없음 · 홈 디렉토리만 건드림`
+`no sudo · no Alt+digit · home directory only`
 
-## 실습 흐름 (청중 멘트 후보)
+## Hands-on flow (presenter cues)
 
-1. 터미널에서 `claude` 실행
-2. 아래 프롬프트 박스 한 덩어리 복붙 → Enter
-3. dry-run 차이 확인 → `y` 승인
-4. `Alt+D`, `Alt+방향키`, `Alt+Z` 시연 (1~2분)
+1. Run `claude` in a terminal.
+2. Paste the prompt block below in one chunk, hit Enter.
+3. Review the dry-run diff, approve with `y`.
+4. Demo `Alt+D`, `Alt+<arrow>`, `Alt+Z` for one or two minutes.
 
-## 프롬프트 전문 (옵션 B 최종본)
+## Full prompt
 
 ```
-내 머신에 tmux 단축키 환경을 만들어줘.
+Set up a tmux shortcut environment on my machine.
 
-전제
-- sudo 일절 금지. 시스템 디렉토리 쓰기 금지.
-- 변경 범위는 ~/.tmux.conf와 ~/.tmux/ 만.
+Constraints
+- No sudo. No writes to system directories.
+- Scope of changes is limited to ~/.tmux.conf and ~/.tmux/ only.
 
-시작 전 확인
-- Claude Code TUI가 점유하는 단축키 목록 먼저 확인 (claude --help, ? 키, 공식 docs).
-- 충돌 키는 tmux 바인딩에서 제외하고 보고. Alt+1~0은 무조건 제외.
+Pre-checks
+- First check which shortcuts the Claude Code TUI reserves
+  (claude --help, the `?` key, official docs).
+- Exclude any conflicting keys from the tmux bindings and report them.
+- Always exclude Alt+1 through Alt+0.
 
-요구사항
-- prefix는 Ctrl+B 유지, 실사용은 모두 prefix-less (`bind -n M-x`)
-- 필수 바인딩:
-  좌우 분할(Alt+D), 상하 분할(Alt+Shift+D),
-  패인 이동(Alt+방향키), 패인 크기 조절(Alt+Shift+방향키),
-  줌 토글(Alt+Z), 패인 닫기(Alt+W),
-  새 윈도우(Alt+T), 이전/다음 윈도우(Alt+[ / Alt+]),
-  설정 리로드(Alt+R)
-- 윈도우 번호 점프는 tmux 기본 prefix 방식(Ctrl+B → 숫자) 사용. Alt+숫자 바인딩 금지.
-- mouse on, history 50000줄, 256색 + truecolor
-- 클립보드 OS 자동 분기 (macOS pbcopy / Linux xclip / WSL clip.exe)
-- 윈도우 이전/다음 키는 conf에 `bind -n "M-[" previous-window` / `bind -n "M-]" next-window` 형태로 따옴표 처리 (대괄호는 tmux 파서에서 special character).
-- TUI 충돌 키 확인 단계에서 docs 접근 불가 시: 알려진 충돌 목록(Alt+숫자, Esc 시퀀스 등)만 출력하고 청중에게 추가 충돌 키 있는지 물은 뒤 진행.
+Requirements
+- Keep the prefix as Ctrl+B, but all daily-use shortcuts must be
+  prefix-less (`bind -n M-x`).
+- Required bindings:
+  split horizontal (Alt+D), split vertical (Alt+Shift+D),
+  pane navigation (Alt+<arrow>), pane resize (Alt+Shift+<arrow>),
+  zoom toggle (Alt+Z), close pane (Alt+W),
+  new window (Alt+T), previous/next window (Alt+[ / Alt+]),
+  reload config (Alt+R).
+- Window-number jump uses the default tmux prefix flow (Ctrl+B -> digit).
+  Do NOT bind Alt+digit.
+- mouse on, history 50000 lines, 256-color + truecolor.
+- Clipboard auto-branched per OS
+  (macOS pbcopy / Linux xclip / WSL clip.exe).
+- Window prev/next bindings must quote the bracket characters in the
+  conf because brackets are special to the tmux parser:
+    bind -n "M-[" previous-window
+    bind -n "M-]" next-window
+- If docs are unreachable during the TUI-conflict check, print the
+  known conflicts (Alt+digit, Esc sequences, etc.), ask the audience
+  if anything else conflicts, then continue.
 
-순서
-1. OS 확인 (macOS / Ubuntu / WSL2)
-2. `command -v tmux`로 설치 여부 확인.
-   없으면 sudo 없이 깔 수 있는 명령 우선 제시 후 멈춤:
+Sequence
+1. Detect OS (macOS / Ubuntu / WSL2).
+2. Check installation with `command -v tmux`.
+   If missing, prefer a no-sudo install path and pause:
      macOS:  brew install tmux
-     Linux:  mamba install -c conda-forge tmux  (또는 conda)
-     마지막 선택지: sudo apt install -y tmux
-   설치는 사용자가 직접. 완료 알려주면 재개.
-3. 기존 ~/.tmux.conf 있으면 ~/.tmux.conf.backup.<날짜>로 백업
-4. 위 요구사항대로 ~/.tmux.conf 작성 (Alt+숫자, TUI 충돌 키 제외)
-5. tmux 실행 중이면 `tmux source-file ~/.tmux.conf`로 즉시 반영
-6. macOS면 사용 중인 터미널 앱 물어보고 Option=Meta 설정법 안내
-7. 시도해볼 단축키 5개 표 출력
+     Linux:  mamba install -c conda-forge tmux  (or conda)
+     Last resort: sudo apt install -y tmux
+   The user installs it themselves. Resume when notified.
+3. If ~/.tmux.conf exists, back it up as ~/.tmux.conf.backup.<date>.
+4. Write ~/.tmux.conf per the requirements above
+   (excluding Alt+digit and any TUI-conflict keys).
+5. If tmux is already running, apply immediately with
+   `tmux source-file ~/.tmux.conf`.
+6. On macOS, ask which terminal app is in use and explain how to
+   enable Option=Meta.
+7. Print a table of the five shortcuts to try first.
 
-실행 전 dry-run으로 변경 사항 먼저 보여주고 승인 받기.
+Show the dry-run diff and ask for approval before applying.
 ```
 
-## 설계 결정 메모
+## Design decisions
 
-| 결정 | 이유 |
+| Decision | Reason |
 |---|---|
-| sudo 금지 | 청중 환경(공용 서버·관리자 권한 없는 노트북) 안전 보장 |
-| Alt+숫자 바인딩 금지 | Claude Code TUI 점유 키(subagent 선택 등)와 충돌. 윈도우 번호 점프는 tmux 기본 prefix(Ctrl+B → 숫자)로 우회 |
-| prefix-less (`bind -n M-x`) | 모던 터미널 UX와 일관. 1단계 입력. prefix는 Ctrl+B 유지하여 호환성 확보 |
-| OS 자동 분기 | macOS(brew + pbcopy), Ubuntu(mamba + xclip), WSL2(clip.exe). 청중 환경 사전 파악 불요 |
-| dry-run 승인 게이트 | ~/.tmux.conf 덮어쓰기 전 차이 확인. 기존 설정 보존(`.backup.<날짜>`) |
-| 옵션 B 채택 | 슬라이드 박스 한 화면 안에 들어가는 길이. 옵션 A 자립형 long-form은 청중이 한눈에 못 봄 |
+| No sudo | Safe for audience environments (shared servers, laptops without admin rights). |
+| No Alt+digit bindings | Conflicts with Claude Code TUI shortcuts (subagent picker, etc.). Window-number jump falls back to tmux default `Ctrl+B -> digit`. |
+| Prefix-less (`bind -n M-x`) | Matches modern terminal UX. One-step input. Ctrl+B prefix is kept for compatibility. |
+| OS auto-branch | macOS (brew + pbcopy), Ubuntu (mamba + xclip), WSL2 (clip.exe). No need to know the audience's setup in advance. |
+| Dry-run approval gate | Diff is shown before overwriting ~/.tmux.conf. Existing config is preserved as `.backup.<date>`. |
+| Short prompt (one screen) | Fits inside a single slide box. A self-contained long-form version was tried and the audience couldn't read it in one glance. |
 
-## 시도용 단축키 5개 (시연 순서)
+## Five shortcuts to try first (demo order)
 
-| 동작     | 키       |
-| ------ | ------- |
-| 좌우 분할  | Alt+D   |
-| 패인 이동  | Alt+방향키 |
-| 줌 토글   | Alt+Z   |
-| 새 윈도우  | Alt+T   |
-| 설정 리로드 | Alt+R   |
-
+| Action | Key |
+|---|---|
+| Split horizontal | Alt+D |
+| Pane navigation | Alt+<arrow> |
+| Zoom toggle | Alt+Z |
+| New window | Alt+T |
+| Reload config | Alt+R |
