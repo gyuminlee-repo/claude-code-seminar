@@ -21,6 +21,7 @@ claude
 | `meeting-note.md` | raw 회의록. "회의록 형식으로 정리해줘"로 재정돈 데모 | 첫 프로젝트, 연구 자동화, 마지막 체크리스트 |
 | `example.md` | Markdown 공용어 시각화 데모 | Section 01 기초 |
 | `data/de_results.csv` | RNA-seq DEG 결과 30 유전자. fdh1 발현 증가 등 분석 데모 | Section 5 연구 자동화, 명령어 실습 |
+| `tmux-setup-prompt.md` | tmux 분할·세팅 안내 프롬프트 (실습 환경 준비) | Section 02 설치와 로그인 (Slide 25) |
 
 ## 데모 흐름 예시
 
