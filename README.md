@@ -23,7 +23,6 @@ claude
 | `data/de_results.csv` | E. coli K-12 stress response DEG 30 유전자 (dnaK·groEL·rpoH·soxR 등) | Section 5 연구 자동화 |
 | `risks.md` | 프로젝트 위험도 raw 메모. HTML 리포트 위험도 색상 표시 입력 | Slide 45 실습 3 HTML 리포트 |
 | `tmux-setup-prompt.md` | tmux 분할·세팅 안내 프롬프트 (실습 환경 준비) | Section 02 설치와 로그인 (Slide 25) |
-| `papers/crispri-functional-genomic-screening.pdf` | CRISPRi functional genomic screening 논문 PDF | Slide 47 5분 라이브 데모 (PDF 요약) |
 | `experiments/260520_od600.csv` | raw OD600 timecourse (16 timepoint × 3 rep) | Slide 50 Plan Mode (연구 자동화 템플릿) |
 | `notes/260521_idea.md` | 다음 실험 아이디어 raw 메모 | Slide 50 Plan Mode |
 | `analysis/sketch_rbs_fit.py` | 미완성 Python 분석 스크립트 (TODO 상태) | Slide 50 Plan Mode |
