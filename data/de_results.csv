@@ -1,31 +1,32 @@
 gene_id,gene_symbol,log2FoldChange,padj,baseMean,description
-PA1_00412,fdh1,3.21,1.2e-15,2840.5,formate dehydrogenase 1
-PA1_00413,fdh2,2.87,3.4e-12,1620.8,formate dehydrogenase 2
-PA1_00891,fae,2.65,8.1e-11,980.4,formaldehyde activating enzyme
-PA1_01205,mtaA,2.41,2.0e-09,1430.2,methanol dehydrogenase subunit A
-PA1_01206,mtaB,2.33,5.6e-09,1210.7,methanol dehydrogenase subunit B
-PA1_02014,frmA,1.98,1.3e-07,860.1,S-formylglutathione hydrolase
-PA1_02315,hps,1.85,4.8e-07,720.9,3-hexulose-6-phosphate synthase
-PA1_02316,phi,1.72,9.2e-07,690.3,6-phospho-3-hexuloisomerase
-PA1_03102,glnA,1.34,2.1e-05,540.2,glutamine synthetase
-PA1_03455,acs,1.21,7.4e-05,490.6,acetyl-CoA synthetase
-PA1_04018,sucA,1.08,2.3e-04,380.4,2-oxoglutarate dehydrogenase
-PA1_04221,mdh,0.97,8.6e-04,460.1,malate dehydrogenase
-PA1_04580,sodA,0.86,1.9e-03,420.7,superoxide dismutase
-PA1_05012,katE,0.72,4.5e-03,310.2,catalase
-PA1_05334,groEL,0.65,9.1e-03,890.5,chaperonin
-PA1_05335,groES,0.61,1.2e-02,470.8,co-chaperonin
-PA1_06107,recA,0.42,4.8e-02,210.4,recombinase A
-PA1_07221,rpoB,-0.38,7.2e-02,1340.9,RNA polymerase beta subunit
-PA1_08019,gyrA,-0.51,2.1e-02,560.3,DNA gyrase A
-PA1_08412,ldhA,-0.94,3.4e-04,640.7,lactate dehydrogenase A
-PA1_08613,pdhA,-1.12,8.7e-05,720.1,pyruvate dehydrogenase A
-PA1_09221,pflB,-1.38,1.4e-05,820.6,pyruvate-formate lyase
-PA1_09445,ackA,-1.55,3.2e-06,510.8,acetate kinase
-PA1_10018,pta,-1.71,6.8e-07,480.2,phosphate acetyltransferase
-PA1_10412,citE,-1.92,4.1e-08,390.5,citrate lyase beta subunit
-PA1_11008,sucD,-2.14,2.3e-09,310.7,succinyl-CoA synthetase
-PA1_11215,fumC,-2.31,8.9e-10,360.1,fumarase C
-PA1_11816,mqo,-2.58,2.4e-11,440.3,malate:quinone oxidoreductase
-PA1_12019,nuoA,-2.84,3.7e-12,520.6,NADH dehydrogenase subunit A
-PA1_12220,atpA,-3.05,5.1e-14,610.4,ATP synthase alpha subunit
+b0014,dnaK,3.42,2.1e-16,2810.5,molecular chaperone heat-inducible
+b0015,dnaJ,3.18,8.7e-15,1650.3,chaperone DnaJ co-factor
+b4142,groEL,2.94,3.2e-13,2240.8,GroEL chaperonin large subunit
+b4143,groES,2.71,1.4e-11,890.4,GroES co-chaperonin
+b3187,rpoH,2.55,6.8e-11,720.2,sigma 32 heat shock sigma factor
+b2614,grpE,2.38,4.5e-10,810.7,heat shock protein nucleotide exchange factor
+b0473,htpG,2.21,1.9e-09,640.5,Hsp90 family chaperone
+b3686,ibpB,2.09,5.3e-09,540.8,small heat shock protein IbpB
+b3687,ibpA,1.96,1.2e-08,580.3,small heat shock protein IbpA
+b4131,katE,1.82,3.8e-08,710.9,catalase HPII
+b3908,sodA,1.74,7.1e-08,920.4,superoxide dismutase Mn
+b1656,sodB,1.61,2.4e-07,680.2,superoxide dismutase Fe
+b3961,oxyR,1.48,6.7e-07,430.1,oxidative stress response regulator
+b0605,ahpC,1.39,1.3e-06,1120.6,alkyl hydroperoxide reductase C
+b0606,ahpF,1.27,4.2e-06,860.3,alkyl hydroperoxide reductase F
+b3938,katG,1.15,9.8e-06,1340.5,catalase HPI
+b4063,soxS,1.04,2.5e-05,310.7,superoxide response regulator
+b4062,soxR,0.92,8.1e-05,250.4,redox sensing transcription factor
+b2699,recA,0.84,1.7e-04,890.6,DNA recombination and repair
+b4043,lexA,0.71,5.2e-04,420.8,SOS regulon repressor
+b0958,sulA,0.65,9.3e-04,290.5,SOS-induced cell division inhibitor
+b0231,dinB,0.52,2.1e-03,210.3,DNA polymerase IV
+b0911,rpsA,-0.48,3.4e-03,2540.7,30S ribosomal protein S1
+b0169,rpsB,-0.61,8.7e-04,2210.4,30S ribosomal protein S2
+b3984,rplA,-0.83,1.5e-04,1980.2,50S ribosomal protein L1
+b0726,sucA,-1.21,2.8e-05,820.6,2-oxoglutarate dehydrogenase E1
+b0727,sucB,-1.45,6.3e-06,710.9,2-oxoglutarate dehydrogenase E2
+b0721,sdhA,-1.78,4.1e-07,950.3,succinate dehydrogenase flavoprotein
+b3236,mdh,-2.15,1.7e-08,1080.5,malate dehydrogenase
+b0095,ftsZ,-2.68,3.5e-10,640.8,cell division GTPase
+b0094,ftsA,-3.02,9.1e-12,520.4,cell division protein FtsA
