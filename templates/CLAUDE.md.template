@@ -1,0 +1,46 @@
+# 내 CLAUDE.md 골격 (슬 48)
+
+## 1단계: 초안 자동 생성
+
+```
+/init
+```
+
+이어서:
+
+```
+이 프로젝트의 CLAUDE.md를 만들어줘.
+규칙은 짧고 행동 가능한 문장으로 써줘.
+응답 언어: 한국어 / 산출물: report/ / 표: Markdown table
+```
+
+## 2단계: 좋은 규칙의 예 (직접 다듬을 부분)
+
+아래 골격을 본인 작업에 맞게 5~7줄로 채운다. 추상적 칭찬 대신 입력·출력·검증 기준을 적는다.
+
+```markdown
+# Project Rules
+
+- Respond in Korean.
+- Before editing files, explain the target file.
+- Save outputs under report/.
+- Prefer Markdown tables for summaries.
+- When uncertain, ask one concrete question.
+- Do not expose secrets or personal data.
+```
+
+## 작성 가이드
+
+| 축 | 한 줄로 채울 내용 |
+|---|---|
+| 환경 | macOS / Linux / WSL 중 무엇인지 |
+| 작업 디렉토리 | 본인 프로젝트 절대 경로 또는 가족 경로 |
+| 작업 톤 | "간결하게", "한국어 응답" 등 본인 톤 한 줄 |
+| 자주 쓰는 도구 | Python, pandas, biopython 등 stack |
+| 절대 금지 | 비밀번호 노출, force push, 외부 데이터 전송 등 |
+
+## 핵심 원칙
+
+- 공식 memory 파일은 Markdown
+- 추상적 칭찬보다 입력·출력·검증 기준
+- 짧고 검증 가능한 문장으로 작성
