@@ -26,6 +26,7 @@ claude
 | `experiments/260520_od600.csv` | raw OD600 timecourse (16 timepoint × 3 rep) | Slide 50 Plan Mode (연구 자동화 템플릿) |
 | `notes/260521_idea.md` | 다음 실험 아이디어 raw 메모 | Slide 50 Plan Mode |
 | `analysis/sketch_rbs_fit.py` | 미완성 Python 분석 스크립트 (TODO 상태) | Slide 50 Plan Mode |
+| `prompts/02-email-draft.md` | 실습 2 prompt 시드. 미팅 노트로 회신 이메일 초안 작성 | Section 05 실습 2 |
 
 ## 데모 흐름 예시
 
@@ -36,13 +37,21 @@ claude
 수정 전에는 어떤 파일을 바꿀지 먼저 말해줘.
 ```
 
-### 2. DEG 데이터 시각화
+### 2. 미팅 노트 → 회신 이메일 초안
+```
+meeting-note.md 읽고, 미팅에서 결정된 사항과 내가 해야 할 액션을 추려서
+정중한 톤의 회신 이메일 초안 markdown 으로 작성해줘.
+수신자는 PI (이혜원 박사님), 발신자는 나(이규민) 가정.
+```
+상세 prompt 시드: `prompts/02-email-draft.md` 참조.
+
+### 3. DEG 데이터 시각화
 ```
 data/de_results.csv를 보고 가장 강하게 발현이 변한 유전자 5개를 알려줘.
 이걸로 막대 그래프 Python 스크립트를 expression_plot.py로 만들어줘.
 ```
 
-### 3. HTML 리포트
+### 4. HTML 리포트
 ```
 방금 분석한 내용을 results/report.html로 정리해줘. 표와 그래프를 포함해서.
 ```
